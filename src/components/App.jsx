@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import Note from "./Note";
 import Footer from "./Footer";
+import Note from "./Note";
 import CreateArea from "./CreateArea";
 
 function App() {
-  const [notes, setNote] = useState([]);
+  const [notes, setNotes] = useState([]);
 
-  function addNote(note) {
-    setNote((prevValues) => {
-      return [...prevValues, note];
+  function addNote(newNote) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, newNote];
     });
   }
 
   function deleteNote(id) {
-    setNote((prevValues) => {
-      return prevValues.filter((noteItem, index) => {
+    setNotes((prevNotes) => {
+      return prevNotes.filter((noteItem, index) => {
         return index !== id;
       });
     });
